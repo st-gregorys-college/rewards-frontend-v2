@@ -1,0 +1,124 @@
+/* 
+
+    /css/styles.css
+    St Gregory's College Rewards System
+
+    Developed by Cooper Beltrami and Robert Bisset
+    Copyright (c) 2020-2021 Cooper Beltrami and Robert Bisset. All Rights Reserved.
+
+*/
+
+/* --------------------------------------
+    DASHBOARD
+-------------------------------------- */
+#studentList
+.accordion-button {
+    padding: 1rem 1.2rem;
+    padding-right: 0.8rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#studentList
+.accordion-button:after {
+    display: none !important;
+}
+
+#studentList
+.accordion-body {
+    border-top: 1px solid #f1f4f8;
+    padding: 24px 32px;
+}
+
+.dropdown-std {
+    min-width: 0 !important;
+}
+
+canvas {
+    height: 336px !important;
+}
+
+.toptenlist
+.list-group-item {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px !important;
+    padding: .8rem 1rem !important;
+}
+
+.toptenlist
+.badge {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.toptenlist
+.place {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.toptenlist
+.col-12:first-child {
+    border-right: 1px solid #f1f4f8;
+}
+
+.toptenlist
+.list-group-item:hover {
+    background-color: #fafafa;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    background-position: center;
+    background-position-y: -16px;
+    background-size: cover;
+    border: 2px solid grey;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+footer a,
+footer a:hover {
+    color: white;
+}
+
+#homeroomStudentsList
+.badge {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#homeroomStudentsList
+.form-control {
+    max-width: 70px;
+}
+
+#homeroomStudentsList
+.list-group-item {
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #f1f4f8;
+}
+
+#homeroomStudentsList
+.list-group-item:hover {
+    background-color: #fafafa;
+}
+
+.spinner-border-button {
+    margin: 2px;
+	height: 1.4rem !important;
+	width: 1.4rem !important;
+}
+
+/* 
+LOGIN
+ */
+.login-bg {
+    background-image: url(../img/login_background.jpg) !important;
+}
