@@ -2448,7 +2448,7 @@ progress {
 	appearance: none;
 	background-clip: padding-box;
 	background-color: #fff;
-	border: 1px solid #dcdfe4;
+	border: 1px solid #f1f4f8;
 	border-radius: .375rem;
 	box-shadow: none;
 	color: #161c2d;
@@ -10136,7 +10136,7 @@ fieldset:disabled .btn {
 }
 
 .bg-image {
-	background-image: url('./assets/img/login_background.jpg');
+	background-image: url('/assets/img/login_background.jpg');
 	background-position: center;
 	background-size: cover;
 	filter: brightness(50%);
@@ -18309,6 +18309,10 @@ fieldset:disabled .btn {
 	background-image: conic-gradient(from 52deg at 50% 50%, #8024a0 0deg, #31eec1 33deg, #6924a0 222deg, #d6723b 264deg, #d5498c 295deg, #8024a0 1turn)
 }
 
+.bg-pattern-2 {
+	background-image: linear-gradient(180deg, transparent 0, #161c2d), url(../img/patterns/pattern-2.png)
+}
+
 .img-skewed {
 	perspective: 1500px;
 	transform-style: preserve-3d
@@ -18728,26 +18732,26 @@ html {
 @font-face {
 	font-family: HKGroteskPro;
 	font-weight: 400;
-	src: url(./assets/fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2) format("woff2"), url(./assets/fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff) format("woff")
+	src: url(../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2) format("woff2"), url(../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff) format("woff")
 }
 
 @font-face {
 	font-family: HKGroteskPro;
 	font-weight: 600;
-	src: url(./assets/fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff2) format("woff2"), url(./assets/fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff) format("woff")
+	src: url(../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff2) format("woff2"), url(../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff) format("woff")
 }
 
 @font-face {
 	font-family: HKGroteskPro;
 	font-weight: 700;
-	src: url(./assets/fonts/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff2) format("woff2"), url(./assets/fonts/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff) format("woff")
+	src: url(../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff2) format("woff2"), url(../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff) format("woff")
 }
 
 @font-face {
 	font-family: Feather;
 	font-style: normal;
 	font-weight: 400;
-	src: url(./assets/fonts/Feather/Feather.ttf?sdxovp) format("truetype"), url(./assets/fonts/Feather/Feather.woff?sdxovp) format("woff"), url(./assets/fonts/Feather/Feather.svg?sdxovp#Feather) format("svg")
+	src: url(../fonts/Feather/Feather.ttf?sdxovp) format("truetype"), url(../fonts/Feather/Feather.woff?sdxovp) format("woff"), url(../fonts/Feather/Feather.svg?sdxovp#Feather) format("svg")
 }
 
 .h1,
@@ -20483,6 +20487,7 @@ a.card:hover {
 }
 
 .avatar:after {
+	background-image: url(../img/masks/avatar-status.svg), url(../img/masks/avatar-group.svg), url(../img/masks/avatar-group-hover.svg), url(../img/masks/avatar-group-hover-last.svg);
 	content: "";
 	height: 0;
 	position: absolute;
@@ -20619,6 +20624,8 @@ a.card:hover {
 }
 
 .avatar-group .avatar:not(:last-child) {
+	-webkit-mask-image: url(../img/masks/avatar-group.svg);
+	mask-image: url(../img/masks/avatar-group.svg);
 	-webkit-mask-size: 100% 100%;
 	mask-size: 100% 100%
 }
@@ -20630,8 +20637,15 @@ a.card:hover {
 }
 
 .avatar-group .avatar:hover+.avatar {
+	-webkit-mask-image: url(../img/masks/avatar-group-hover.svg);
+	mask-image: url(../img/masks/avatar-group-hover.svg);
 	-webkit-mask-size: 100% 100%;
 	mask-size: 100% 100%
+}
+
+.avatar-group .avatar:hover+.avatar:last-child {
+	-webkit-mask-image: url(../img/masks/avatar-group-hover-last.svg);
+	mask-image: url(../img/masks/avatar-group-hover-last.svg)
 }
 
 .device,

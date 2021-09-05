@@ -19,7 +19,7 @@ const config = {
 
 firebase.initializeApp(config);
 
-firebase.analytics();
-firebase.performance();
+// firebase.analytics();
+// firebase.performance();
 
 export default firebase;

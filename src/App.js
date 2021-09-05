@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { authObserver } from './redux/actions/authActions';
 
 import PrivateRoute from './components/PrivateRoute';
-import Navbar from './components/Navbar';
 
 import Home from './views/Home';
 import Login from './views/Login';

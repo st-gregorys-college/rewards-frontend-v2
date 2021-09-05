@@ -38,7 +38,9 @@ export const loginAction = loginData => async (dispatch) => {
     if (!EmailValidator.validate(loginHint)) {
       return dispatch({
         type: AuthActionTypes.LOGIN_USER_ERROR,
-        error: 'Invalid email or student number'
+        error: {
+          code: 'Invalid email or student ID'
+        }
       });
     }
 
@@ -47,7 +49,7 @@ export const loginAction = loginData => async (dispatch) => {
       return dispatch({
         type: AuthActionTypes.LOGIN_USER_ERROR,
         error: {
-          error: 'Invalid email address domain'
+          code: 'Invalid email address domain'
         }
       });
     }
@@ -74,7 +76,7 @@ export const loginAction = loginData => async (dispatch) => {
 
     let fullName = `${givenName} ${surname}`;
 
-    if (loginHint.split('@')[0] === 'training05') {
+    if (loginHint === 'training05@stgregs.nsw.edu.au') {
       fullName = 'Cooper Beltrami';
     }
 

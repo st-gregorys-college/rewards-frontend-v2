@@ -18,7 +18,7 @@ const Login = (props) => {
     setInputValue({...inputValue, value });
   };
 
-  const { authUser, authErr, isLoading } = props;
+  const { authUser, authError, isLoading } = props;
 
   if (authUser) return <Redirect to="/dashboard" />
 
@@ -26,13 +26,13 @@ const Login = (props) => {
     <section>
       <div className="container d-flex flex-column">
         <div className="row align-items-center justify-content-center gx-0 min-vh-100">
-          <h2 className="mb-1 fw-bold" style={{position: 'absolute', top: 32, paddingLeft: '1.25rem', fontSize: 24}}>Rewards Dashboard</h2>
+          <h2 className="mb-1 fw-bold" style={{position: 'absolute', top: 32, paddingLeft: '1.25rem', fontSize: 24}}>Student Wellbeing</h2>
           <div className="col-12 col-md-6 col-lg-4 py-8 py-md-11">
             <h1 className="mb-0 fw-bold">Sign in</h1>
             <p className="mb-6 text-muted">St Gregory's College Campbelltown</p>
             <div className="mb-6">
               <form className="form-group" onSubmit={onSubmit}>
-                <label htmlFor="email" className="form-label">Email or Student Number</label>
+                <label htmlFor="email" className="form-label">Email or Student ID</label>
                 {
                   isLoading
                   ?
@@ -57,9 +57,7 @@ const Login = (props) => {
                 }
               </form>
               <p className="mb-0 fs-sm" style={{color: 'red'}}>
-                {
-                  authErr === 'auth/popup-closed-by-user' ? '' : authErr
-                }
+                {(isLoading ? '' : (authError === 'auth/popup-closed-by-user' ? '' : authError))}
               </p>
             </div>
           </div>
@@ -80,7 +78,7 @@ const Login = (props) => {
 
 const mapStateToProps = state => ({
     authUser: state.auth.authUser,
-    authErr: state.auth.authError,
+    authError: state.auth.authError,
     isLoading: state.auth.isLoading
 });
 

@@ -1,13 +1,3 @@
-/* 
-
-    /css/styles.css
-    St Gregory's College Rewards System
-
-    Developed by Cooper Beltrami and Robert Bisset
-    Copyright (c) 2020-2021 Cooper Beltrami and Robert Bisset. All Rights Reserved.
-
-*/
-
 /* --------------------------------------
     DASHBOARD
 -------------------------------------- */
@@ -121,4 +111,19 @@ LOGIN
  */
 .login-bg {
     background-image: url(../img/login_background.jpg) !important;
+}
+
+/*
+GENERAL
+*/
+.card-header,
+.form-control {
+    border-color: #dddddd;
+}
+
+.bg-image {
+    background-image: url(../img/login_background.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: brightness(50%);
 }
