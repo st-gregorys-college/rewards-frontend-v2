@@ -22870,9 +22870,9 @@ a.card:hover {
 }
 
 .page-loader {
-width: 100%;
-height: 100%;
-background-color: white;
+	width: 100%;
+	height: 100%;
+	background-color: white;
 }
 
 .page-loader .spinner-border {

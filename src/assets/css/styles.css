@@ -1,6 +1,6 @@
-/* --------------------------------------
-    DASHBOARD
--------------------------------------- */
+/* 
+DASHBOARD
+ */
 #studentList
 .accordion-button {
     padding: 1rem 1.2rem;
@@ -126,4 +126,8 @@ GENERAL
     background-position: center;
     background-size: cover;
     filter: brightness(50%);
+}
+
+.btn-primary > option {
+    background-color: white;
 }

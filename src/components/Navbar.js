@@ -16,10 +16,14 @@ export default function Navbar() {
   useEffect(() => {
     setUserPermissions('System Administrator');
     setUserAvatar(`https://ui-avatars.com/api/?name=${displayName}&rounded=true&background=random&bold=true`);
-  });
+  }, []);
 
   const avatarEnter = () => {
-    setShowDropdown('show');
+    setShowDropdown('showing');
+
+    setTimeout(() => {
+      setShowDropdown('show')
+    }, 0);
   };
 
   const avatarLeave = () => {
@@ -44,15 +48,14 @@ export default function Navbar() {
               <Link className="nav-link" to="/dashboard">Dashboard</Link>
             </li>
             <li className="nav-item">
-                  <Link className="nav-link" to="/homerooms">Green Stamps</Link>
-                </li>
+              <Link className="nav-link" to="/homerooms">Green Stamps</Link>
+            </li>
             <li className="nav-item">
-                  <Link className="nav-link" to="/yearleader">Year Leader</Link>
-                </li>
+              <Link className="nav-link" to="/yearleader">Year Leader</Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/rewards">Rewards</Link>
             </li>
-            <button onClick={signOut}>Sign Out</button>
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item dropdown">
