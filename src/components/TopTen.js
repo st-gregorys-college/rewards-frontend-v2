@@ -135,7 +135,6 @@ export default function TopTen() {
           <div className="col-auto" style={{padding: 0}}>
             <Dropdown
               id="top-ten-mode-dropdown"
-              name="top-ten-mode-dropdown"
               options={topTenModes}
               onChange={topTenModeChange}
             />
@@ -143,7 +142,6 @@ export default function TopTen() {
           <div className="col-auto">
           <Dropdown
               id="top-ten-year-dropdown"
-              name="top-ten-year-dropdown"
               options={topTenYearGroups}
               onChange={topTenYearGroupsChange}
             />

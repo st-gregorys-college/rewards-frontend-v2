@@ -131,3 +131,7 @@ GENERAL
 .btn-primary > option {
     background-color: white;
 }
+
+select {
+    cursor: pointer;
+}

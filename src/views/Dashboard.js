@@ -7,6 +7,8 @@ import Navbar from '../components/Navbar';
 import Header from '../components/Header';
 import StudentSearch from '../components/StudentSearch';
 import TopTen from '../components/TopTen';
+import PointsBreakdown from '../components/PointsBreakdown';
+import StageChallenge from '../components/StageChallenge';
 
 const Dashboard = (props) => {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -31,6 +33,8 @@ const Dashboard = (props) => {
               <div className="col-12 col-md-12">
                 <StudentSearch />
                 <TopTen />
+                <PointsBreakdown />
+                <StageChallenge />
               </div>
             </div>
           </main>
