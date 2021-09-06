@@ -5,7 +5,6 @@ const Home = (props) => {
   return (
     <div>
       <h1>Home</h1>
-      <h2>Is Authenticated: {props.authUser ? 'Yes' : 'No'}</h2>
     </div>
   );
 };
