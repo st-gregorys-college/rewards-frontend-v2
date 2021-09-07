@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Card from "./Card";
 import Dropdown from "./Dropdown";
 import TopTenItem from './TopTenItem';
+import Modal from './Modal';
 
 export default function TopTen() {
   const topTenModes = [
@@ -96,18 +97,29 @@ export default function TopTen() {
       last_name: 'BELTRAMI',
       house: 'Donovan',
       points: '150',
-      year_group: '12'
+      year_group: '12',
+      student_id: '63895'
     },
     {
       first_name: 'Cristian',
       last_name: 'LUSTRI',
       house: 'Laurentian',
       points: '100',
-      year_group: '12'
+      year_group: '12',
+      student_id: '64789'
     }
   ];
 
   const [topTenStudents, setTopTenStudents] = useState([]);
+  const [showProfile, setShowProfile] = useState(false);
+
+  const handleShowProfile = student_id => {
+    setShowProfile(true);
+
+    console.log(student_id)
+  }
+
+  const handleHideProfile = () => setShowProfile(false);
 
   useEffect(() => {
     setTopTenStudents(_tempStudents);
@@ -126,48 +138,58 @@ export default function TopTen() {
   };
 
   return (
-    <Card
-      header={
-        <div className="row align-items-center" style={{height: 35}}>
-          <div className="col">
-            <h4 className="mb-0">Top Ten</h4>
-          </div>
-          <div className="col-auto" style={{padding: 0}}>
+    <>
+      <Card
+        header={
+          <div className="row align-items-center" style={{height: 35}}>
+            <div className="col">
+              <h4 className="mb-0">Top Ten</h4>
+            </div>
+            <div className="col-auto" style={{padding: 0}}>
+              <Dropdown
+                id="top-ten-mode-dropdown"
+                options={topTenModes}
+                onChange={topTenModeChange}
+              />
+            </div>
+            <div className="col-auto">
             <Dropdown
-              id="top-ten-mode-dropdown"
-              options={topTenModes}
-              onChange={topTenModeChange}
-            />
-          </div>
-          <div className="col-auto">
-          <Dropdown
-              id="top-ten-year-dropdown"
-              options={topTenYearGroups}
-              onChange={topTenYearGroupsChange}
-            />
-          </div>
-        </div>
-      }
-      body={
-        <div className="list-group" style={{padding: '1.3rem'}}>
-          <div className="row">
-            <div className="col-12 col-md-6 toptenlist">
-              {
-                topTenStudents.map((student, i) => {
-                  return <TopTenItem 
-                    place={placeText[i].place}
-                    sup={placeText[i].sup}
-                    name={student.first_name + ' ' + student.last_name}
-                    year={student.year_group}
-                    house={student.house}
-                    points={student.points}
-                  />
-                })
-              }
+                id="top-ten-year-dropdown"
+                options={topTenYearGroups}
+                onChange={topTenYearGroupsChange}
+              />
             </div>
           </div>
-        </div>
-      }
-    />
+        }
+        body={
+          <div className="list-group" style={{padding: '1.3rem'}}>
+            <div className="row">
+              <div className="col-12 col-md-6 toptenlist">
+                {
+                  topTenStudents.map((student, i) => {
+                    return <TopTenItem 
+                      place={placeText[i].place}
+                      sup={placeText[i].sup}
+                      name={student.first_name + ' ' + student.last_name}
+                      year={student.year_group}
+                      house={student.house}
+                      points={student.points}
+                      student_id={student.student_id}
+                      click={handleShowProfile}
+                    />
+                  })
+                }
+              </div>
+            </div>
+          </div>
+        }
+      />
+      <Modal
+        title="This is a modal"
+        body="This is a placeholder modal body for the meantime while I figure something out"
+        onShow={showProfile}
+        onClose={handleHideProfile}
+      />
+    </>
   );
 };

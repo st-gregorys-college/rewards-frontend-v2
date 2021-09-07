@@ -10,7 +10,7 @@ export default function Footer() {
     </div>
     <footer className="py-5 pt-6 bg-dark">
       <p className="text-center text-white mb-0">
-        Copyright &copy; 2021. All Rights Reserved. Developed by Cooper Beltrami & Robert Bisset
+        Copyright &copy; 2021. All Rights Reserved. Developed by <a target="_blank" href="https://github.com/glowbase">Cooper Beltrami</a> & <a target="_blank" href="https://github.com/rbisset">Robert Bisset</a>
       </p>
     </footer>
     </>

@@ -1,6 +1,6 @@
-export default function TopTenItem({ place, sup: supText, name, year, house, points }) {
+export default function TopTenItem({ place, sup: supText, name, year, house, points, student_id, click }) {
   return (
-    <div className="list-group-item d-flex align-items-center">
+    <div className="list-group-item d-flex align-items-center" onClick={() => click(student_id)}>
       <div className="col-auto place">{place}<sup>{supText}</sup></div>
       <div className="me-auto">
           <p className="fw-bold mb-1 name">{name}</p>
