@@ -19,6 +19,20 @@ export default function PointsBreakdown() {
         display: false
       },
     },
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        }
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false
   };
 
   return (

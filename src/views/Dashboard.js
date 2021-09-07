@@ -9,6 +9,9 @@ import StudentSearch from '../components/StudentSearch';
 import TopTen from '../components/TopTen';
 import PointsBreakdown from '../components/PointsBreakdown';
 import StageChallenge from '../components/StageChallenge';
+import YearTotals from '../components/YearTotals';
+import HouseTotals from '../components/HouseTotals';
+import Footer from '../components/Footer';
 
 const Dashboard = (props) => {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -35,9 +38,12 @@ const Dashboard = (props) => {
                 <TopTen />
                 <PointsBreakdown />
                 <StageChallenge />
+                <YearTotals />
+                <HouseTotals />
               </div>
             </div>
           </main>
+          <Footer />
         </>
         :
         <PageLoader />

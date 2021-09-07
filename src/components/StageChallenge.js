@@ -33,8 +33,22 @@ export default function StageChallenge() {
     plugins: {
       legend: {
         display: false
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        }
       }
-    }
+    },
+    responsive: true,
+    maintainAspectRatio: false
   };
 
   const stageChange = event => {
