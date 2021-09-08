@@ -9,6 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Home from './views/Home';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
+import Homerooms from './views/Homerooms';
 
 const App = (props) => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/homerooms" component={Homerooms} />
           
           <PrivateRoute path="/dashboard" component={Dashboard} />
         </Switch>

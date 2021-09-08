@@ -13,7 +13,7 @@ import YearTotals from '../components/YearTotals';
 import HouseTotals from '../components/HouseTotals';
 import Footer from '../components/Footer';
 
-const Dashboard = (props) => {
+const Dashboard = props => {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   useEffect(() => {
