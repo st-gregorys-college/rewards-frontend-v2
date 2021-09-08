@@ -27,9 +27,9 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/homerooms" component={Homerooms} />
           
           <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/homerooms" component={Homerooms} />
         </Switch>
       </Router>
     </React.Fragment>
