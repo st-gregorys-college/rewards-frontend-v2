@@ -8,8 +8,8 @@ export default function PointsBreakdown() {
     datasets: [{
       backgroundColor: ['rgba(105, 224, 105, 0.4)','rgb(123, 180, 223, 0.4)','rgba(136, 0, 36, 0.4)'],
       borderColor: ['rgb(105, 224, 105)','rgb(123, 180, 223)','rgba(136, 0, 36)'],
-      borderWidth: 1,
-      data: [10, 3, 8]
+      data: [10, 3, 8],
+      borderWidth: 1
     }]
   };
 
@@ -43,7 +43,7 @@ export default function PointsBreakdown() {
             <h4 className="mb-0">Points Breakdown</h4>
           </div>
           <div className="col-auto">
-            <Link className="small text-gray-700" to="/profile/general">View Profile</Link>
+            <button className="btn btn-xs btn-secondary-soft" to="/profile/">View Profile</button>
           </div>
         </div>
       }

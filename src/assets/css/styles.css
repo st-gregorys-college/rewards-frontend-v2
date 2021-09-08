@@ -50,12 +50,12 @@ canvas {
 
 .toptenlist
 .col-12:first-child {
-    border-right: 1px solid #f1f4f8;
+    border-right: 1px solid #e8e9eb;
 }
 
 .toptenlist
 .list-group-item:hover {
-    background-color: #fafafa;
+    background-color: #f8f8f8;
 }
 
 .profile-avatar {

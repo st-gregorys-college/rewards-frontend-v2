@@ -107,16 +107,80 @@ export default function TopTen() {
       points: '100',
       year_group: '12',
       student_id: '64789'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      house: 'Donovan',
+      points: '90',
+      year_group: '8',
+      student_id: '66540'
     }
   ];
 
   const [topTenStudents, setTopTenStudents] = useState([]);
   const [showProfile, setShowProfile] = useState(false);
+  const [profileData, setProfileData] = useState({});
 
-  const handleShowProfile = student_id => {
+  const handleShowProfile = student => {
     setShowProfile(true);
-
-    console.log(student_id)
+    setProfileData(student);
   }
 
   const handleHideProfile = () => setShowProfile(false);
@@ -162,19 +226,27 @@ export default function TopTen() {
           </div>
         }
         body={
-          <div className="list-group" style={{padding: '1.3rem'}}>
+          <div className="list-group toptenlist" style={{padding: '1.3rem'}}>
             <div className="row">
-              <div className="col-12 col-md-6 toptenlist">
+              <div className="col-12 col-md-6">
                 {
-                  topTenStudents.map((student, i) => {
+                  topTenStudents.slice(0, 5).map((student, i) => {
                     return <TopTenItem 
                       place={placeText[i].place}
                       sup={placeText[i].sup}
-                      name={student.first_name + ' ' + student.last_name}
-                      year={student.year_group}
-                      house={student.house}
-                      points={student.points}
-                      student_id={student.student_id}
+                      student={student}
+                      click={handleShowProfile}
+                    />
+                  })
+                }
+              </div>
+              <div className="col-12 col-md-6">
+                {
+                  topTenStudents.slice(5, 10).map((student, i) => {
+                    return <TopTenItem 
+                      place={placeText[i + 5].place}
+                      sup={placeText[i + 5].sup}
+                      student={student}
                       click={handleShowProfile}
                     />
                   })
@@ -185,8 +257,12 @@ export default function TopTen() {
         }
       />
       <Modal
-        title="This is a modal"
-        body="This is a placeholder modal body for the meantime while I figure something out"
+        title={profileData.first_name + "'s profile"}
+        body={
+          <div>
+
+          </div>
+        }
         onShow={showProfile}
         onClose={handleHideProfile}
       />
