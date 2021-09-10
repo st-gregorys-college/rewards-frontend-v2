@@ -4,7 +4,7 @@ export default function Card({ header, body }) {
       <div className="card-header">
         {header}
       </div>
-      <div className="card-body" style={{padding: '1.3rem'}}>
+      <div className="card-body" style={{padding: 20}}>
         {body}
       </div>
     </div>

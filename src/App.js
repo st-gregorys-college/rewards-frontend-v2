@@ -10,6 +10,7 @@ import Home from './views/Home';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import Homerooms from './views/Homerooms';
+import Homeroom from './views/Homeroom';
 
 const App = (props) => {
   useEffect(() => {
@@ -28,8 +29,9 @@ const App = (props) => {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           
-          <PrivateRoute path="/dashboard" component={Dashboard} />
-          <PrivateRoute path="/homerooms" component={Homerooms} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/homerooms" component={Homerooms} />
+          <PrivateRoute exact path="/homeroom/:homeroom_id" component={Homeroom} />
         </Switch>
       </Router>
     </React.Fragment>

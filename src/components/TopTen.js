@@ -259,9 +259,7 @@ export default function TopTen() {
       <Modal
         title={profileData.first_name + "'s profile"}
         body={
-          <div>
-
-          </div>
+          <div></div>
         }
         onShow={showProfile}
         onClose={handleHideProfile}
