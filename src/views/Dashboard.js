@@ -50,10 +50,10 @@ const Dashboard = props => {
       }
     </>
   );
-};
+}
 
 const mapStateToProps = (state) => {
-  return { authUser: state.auth.authUser };
-};
+  return { authUser: state.auth.authUser }
+}
 
 export default connect(mapStateToProps)(Dashboard);

@@ -8,4 +8,4 @@ export default function Dropdown({ id, name, options, onChange }) {
        } 
     </select>
   );
-};
+}

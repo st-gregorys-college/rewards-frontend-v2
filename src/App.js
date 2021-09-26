@@ -11,6 +11,7 @@ import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import Homerooms from './views/Homerooms';
 import Homeroom from './views/Homeroom';
+import YearLeader from './views/YearLeader';
 
 const App = (props) => {
   useEffect(() => {
@@ -32,16 +33,17 @@ const App = (props) => {
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/homerooms" component={Homerooms} />
           <PrivateRoute exact path="/homeroom/:homeroom_id" component={Homeroom} />
+          <PrivateRoute exact path="/yearleader" component={YearLeader} />
         </Switch>
       </Router>
     </React.Fragment>
   );
-};
+}
 
 const mapDispatchToProps = dispatch => {
   return {
     authObserver: () => dispatch(authObserver())
-  };
-};
+  }
+}
 
 export default connect(null, mapDispatchToProps)(App);

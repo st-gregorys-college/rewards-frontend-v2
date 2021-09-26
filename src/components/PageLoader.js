@@ -4,4 +4,4 @@ export default function PageLoader() {
       <div className="spinner-border text-primary"></div>
     </div>
   );
-};
+}

@@ -6,7 +6,7 @@ import TopTenItem from './TopTenItem';
 import Modal from './Modal';
 
 export default function TopTen() {
-  const topTenModes = [
+  const topTenModeOptions = [
     {
       name: 'Current',
       value: 'current'
@@ -17,7 +17,7 @@ export default function TopTen() {
     }
   ];
 
-  const topTenYearGroups = [
+  const topTenYearGroupOptions = [
     {
       name: 'All Years',
       value: 'all'
@@ -178,6 +178,10 @@ export default function TopTen() {
   const [showProfile, setShowProfile] = useState(false);
   const [profileData, setProfileData] = useState({});
 
+  useEffect(() => {
+    setTopTenStudents(_tempStudents);
+  }, []);
+
   const handleShowProfile = student => {
     setShowProfile(true);
     setProfileData(student);
@@ -185,21 +189,17 @@ export default function TopTen() {
 
   const handleHideProfile = () => setShowProfile(false);
 
-  useEffect(() => {
-    setTopTenStudents(_tempStudents);
-  }, []);
-
-  const topTenModeChange = event => {
-    const { value } = event.target;
+  const topTenModeChange = e => {
+    const { value } = e.target;
 
     console.log(value);
-  };
+  }
 
-  const topTenYearGroupsChange = event => {
-    const { value } = event.target;
+  const topTenYearGroupsChange = e => {
+    const { value } = e.target;
 
     console.log(value);
-  };
+  }
 
   return (
     <>
@@ -212,14 +212,14 @@ export default function TopTen() {
             <div className="col-auto" style={{padding: 0}}>
               <Dropdown
                 id="top-ten-mode-dropdown"
-                options={topTenModes}
+                options={topTenModeOptions}
                 onChange={topTenModeChange}
               />
             </div>
             <div className="col-auto">
             <Dropdown
                 id="top-ten-year-dropdown"
-                options={topTenYearGroups}
+                options={topTenYearGroupOptions}
                 onChange={topTenYearGroupsChange}
               />
             </div>
@@ -266,4 +266,4 @@ export default function TopTen() {
       />
     </>
   );
-};
+}

@@ -24,11 +24,11 @@ export default function Navbar() {
     setTimeout(() => {
       setShowDropdown('show')
     }, 0);
-  };
+  }
 
   const avatarLeave = () => {
     setShowDropdown('');
-  };
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -88,4 +88,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-};
+}

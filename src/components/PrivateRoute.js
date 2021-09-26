@@ -12,12 +12,12 @@ const PrivateRoute = ({ component: Component, authUser, ...rest }) => {
       <Redirect to="/login" />
     }/>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   return {
     authUser: state.auth.authUser
   }
-};
+}
 
 export default connect(mapStateToProps)(PrivateRoute);

@@ -10,13 +10,13 @@ const Login = (props) => {
   const onSubmit = event => {
     event.preventDefault();
     props.login(inputValue);
-  };
+  }
 
   const onChange = event => {
     const { value } = event.target;
 
     setInputValue({...inputValue, value });
-  };
+  }
 
   const { authUser, authError, isLoading } = props;
 
@@ -74,7 +74,7 @@ const Login = (props) => {
       </div>
     </section>
   );
-};
+}
 
 const mapStateToProps = state => ({
     authUser: state.auth.authUser,

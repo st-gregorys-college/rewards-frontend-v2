@@ -5,7 +5,7 @@ export default function StudentSearch() {
     const { value } = event.target;
 
     console.log(value);
-  };
+  }
 
   return (
     <Card

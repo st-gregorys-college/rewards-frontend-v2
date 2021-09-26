@@ -7,12 +7,12 @@ const Home = (props) => {
       <h1>Home</h1>
     </div>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   return {
     authUser: state.auth.authUser
-  };
-};
+  }
+}
 
 export default connect(mapStateToProps)(Home);

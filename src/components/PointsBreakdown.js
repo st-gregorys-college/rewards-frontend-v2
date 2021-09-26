@@ -11,7 +11,7 @@ export default function PointsBreakdown() {
       data: [10, 3, 8],
       borderWidth: 1
     }]
-  };
+  }
 
   const chartOptions = {
     plugins: {
@@ -33,7 +33,7 @@ export default function PointsBreakdown() {
     },
     responsive: true,
     maintainAspectRatio: false
-  };
+  }
 
   return (
     <Card
@@ -52,4 +52,4 @@ export default function PointsBreakdown() {
       }
     />
   );
-};
+}

@@ -111,7 +111,7 @@ const Homeroom = props => {
   const handleShowProfile = student => {
     setShowProfile(true);
     setProfileData(student);
-  };
+  }
 
   const handleHideProfile = () => setShowProfile(false);
 
@@ -179,10 +179,10 @@ const Homeroom = props => {
     }
     </>
   );
-};
+}
 
 const mapStateToProps = state => {
-  return { authUser: state.auth.authUser };
-};
+  return { authUser: state.auth.authUser }
+}
 
 export default connect(mapStateToProps)(Homeroom);

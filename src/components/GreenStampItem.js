@@ -23,4 +23,4 @@ export default function GreenStampItem({ student, click }) {
       </div>
     </div>
   );
-};
+}

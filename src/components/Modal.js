@@ -13,4 +13,4 @@ export default function ModalComponent({ title, body, footer, onShow, onClose })
       </Modal.Footer>
     </Modal>
     );
-};
+}

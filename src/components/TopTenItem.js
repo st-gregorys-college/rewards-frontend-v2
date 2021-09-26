@@ -9,4 +9,4 @@ export default function TopTenItem({ place, sup: supText, student, click }) {
       <div className="badge badge-lg badge-rounded-circle bg-success-soft ms-4 points">Points {student.points}</div>
     </div>
   );
-};
+}

@@ -27,7 +27,7 @@ export default function StageChallenge() {
       borderWidth: '2',
       data: [10, 20],
     }]
-  };
+  }
 
   const chartOptions = {
     plugins: {
@@ -49,13 +49,13 @@ export default function StageChallenge() {
     },
     responsive: true,
     maintainAspectRatio: false
-  };
+  }
 
   const stageChange = event => {
     const { value } = event.target;
 
     console.log(value);
-  };
+  }
 
   return (
     <Card
@@ -78,4 +78,4 @@ export default function StageChallenge() {
       }
     />
   );
-};
+}

@@ -10,7 +10,7 @@ export default function HouseTotals() {
       data: [10, 30, 50, 10],
       borderWidth: 1
     }]
-  };
+  }
 
   const chartOptions = {
     plugins: {
@@ -32,7 +32,7 @@ export default function HouseTotals() {
     },
     responsive: true,
     maintainAspectRatio: false
-  };
+  }
   
   return (
     <Card
@@ -44,4 +44,4 @@ export default function HouseTotals() {
       }
     />
   );
-};
+}

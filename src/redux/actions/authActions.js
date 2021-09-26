@@ -18,7 +18,7 @@ export const authObserver = () => (dispatch) => {
       });
     }
   });
-};
+}
 
 // The auth state listener/observer above will dispatch
 // a sign in action when the sign in is successful
@@ -56,7 +56,7 @@ export const loginAction = loginData => async (dispatch) => {
 
     // Link Azure AD
     provider.setCustomParameters({
-      tenant: process.env.REACT_APP_MICROSOFT_AD_TENANT,
+      tenant: 'de214aaf-7042-482c-a00c-fab6d7cae45f',
       login_hint: loginHint
     });
 
@@ -89,7 +89,7 @@ export const loginAction = loginData => async (dispatch) => {
       error
     });
   }
-};
+}
 
 // The auth state listener/observer above will dispatch
 // a sign out action when the user sign out is successful
@@ -104,5 +104,5 @@ export const signOutAction = () => async (dispatch) => {
       type: AuthActionTypes.SIGNOUT_USER_ERROR,
       error
     });
-  };
-};
+  }
+}

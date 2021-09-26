@@ -10,7 +10,7 @@ export default function YearTotals() {
       data: [100, 300, 70, 500, 200, 600],
       borderWidth: 1
     }]
-  };
+  }
 
   const chartOptions = {
     plugins: {
@@ -32,7 +32,7 @@ export default function YearTotals() {
     },
     responsive: true,
     maintainAspectRatio: false
-  };
+  }
   
   return (
     <Card
@@ -44,4 +44,4 @@ export default function YearTotals() {
       }
     />
   );
-};
+}
