@@ -52,7 +52,6 @@ export default function MeritList() {
   // 0 - Blue
   // 1 - White
   // 2 - Maroon
-
   const meritTypeOptions = [
     {
       name: 'All',
@@ -78,27 +77,103 @@ export default function MeritList() {
       last_name: 'BELTRAMI',
       year_group: '12',
       student_id: '63895',
-      merit: 0
+      merit_type: 0,
+      merit_id: 'abc109'
     },
     {
       first_name: 'Cristian',
       last_name: 'LUSTRI',
       year_group: '12',
       student_id: '64789',
-      merit: 1
+      merit_type: 1,
+      merit_id: 'abc094'
     },
     {
       first_name: 'Spencer',
       last_name: 'BELTRAMI',
       year_group: '8',
       student_id: '66540',
-      merit: 3
+      merit_type: 2,
+      merit_id: 'abc123'
+    },
+    {
+      first_name: 'Cooper',
+      last_name: 'BELTRAMI',
+      year_group: '12',
+      student_id: '63895',
+      merit_type: 0,
+      merit_id: 'abc109'
+    },
+    {
+      first_name: 'Cristian',
+      last_name: 'LUSTRI',
+      year_group: '12',
+      student_id: '64789',
+      merit_type: 1,
+      merit_id: 'abc094'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      year_group: '8',
+      student_id: '66540',
+      merit_type: 2,
+      merit_id: 'abc123'
+    },
+    {
+      first_name: 'Cooper',
+      last_name: 'BELTRAMI',
+      year_group: '12',
+      student_id: '63895',
+      merit_type: 0,
+      merit_id: 'abc109'
+    },
+    {
+      first_name: 'Cristian',
+      last_name: 'LUSTRI',
+      year_group: '12',
+      student_id: '64789',
+      merit_type: 1,
+      merit_id: 'abc094'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      year_group: '8',
+      student_id: '66540',
+      merit_type: 2,
+      merit_id: 'abc123'
+    },
+    {
+      first_name: 'Cooper',
+      last_name: 'BELTRAMI',
+      year_group: '12',
+      student_id: '63895',
+      merit_type: 0,
+      merit_id: 'abc109'
+    },
+    {
+      first_name: 'Cristian',
+      last_name: 'LUSTRI',
+      year_group: '12',
+      student_id: '64789',
+      merit_type: 1,
+      merit_id: 'abc094'
+    },
+    {
+      first_name: 'Spencer',
+      last_name: 'BELTRAMI',
+      year_group: '8',
+      student_id: '66540',
+      merit_type: 2,
+      merit_id: 'abc123'
     },
   ];
   
-  const _tempAdmin = false;
+  const _tempAdmin = true;
 
   const [meritList, setMeritList] = useState([]);
+  const [isActioned, setIsActioned] = useState(false);
 
   useEffect(() => {
     setMeritList(_tempMeritList);
@@ -113,7 +188,7 @@ export default function MeritList() {
   const meritActionChange = e => {
     const { value } = e.target;
 
-    console.log(value);
+    setIsActioned(value === 'actioned');
   }
 
   const meritTypeChange = e => {
@@ -146,7 +221,7 @@ export default function MeritList() {
             </div>
             {
               _tempAdmin ?
-              <div className="col-auto">
+              <div className="col-auto" style={{padding: 0}}>
                 <Dropdown
                   id="merit-list-yeargroup-dropdown"
                   options={meritYearGroupOptions}
@@ -157,14 +232,23 @@ export default function MeritList() {
           </div>
         }
         body={
-          <div className="list-group" style={{padding: '1.3rem'}}>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                {
-                  meritList.map(student => {
-                    return <MeritItem student={student} />
-                  })
-                }
+          <div className="list-group">
+            <div className="list-group toptenlist">
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  {
+                    meritList.slice(0, Math.floor(meritList.length / 2)).map(merit => {
+                      return <MeritItem merit={merit} id={merit.merit_id} action={isActioned} />
+                    })
+                  }
+                </div>
+                <div className="col-12 col-md-6">
+                  {
+                    meritList.slice(Math.floor(meritList.length / 2), meritList.length).map(merit => {
+                      return <MeritItem merit={merit} id={merit.merit_id} action={isActioned} />
+                    })
+                  }
+                </div>
               </div>
             </div>
           </div>
