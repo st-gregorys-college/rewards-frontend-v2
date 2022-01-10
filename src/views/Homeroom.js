@@ -12,9 +12,6 @@ import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
 
 const Homeroom = props => {
-  const { code, year_group, letter } = props.location.state;
-  const last_updated = 'Fri Jun - 09:03AM';
-
   const _tempStudents = [
     {
       first_name: 'Cooper',
@@ -115,6 +112,11 @@ const Homeroom = props => {
 
   const handleHideProfile = () => setShowProfile(false);
 
+  if (!props.location.state) return <Redirect to="/dashboard" />
+
+  const { code, year_group, letter } = props.location.state;
+  const last_updated = 'Fri Jun - 09:03AM';
+  
   if (!props.authUser) return <Redirect to="/login" />
 
   return (

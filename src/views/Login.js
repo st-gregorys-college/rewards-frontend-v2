@@ -19,8 +19,9 @@ const Login = (props) => {
   }
 
   const { authUser, authError, isLoading } = props;
+  const lastAccessedPage = localStorage.getItem('last-page');
 
-  if (authUser) return <Redirect to="/dashboard" />
+  if (authUser) return <Redirect to={lastAccessedPage || '/dashboard'} />
 
   return (
     <section>

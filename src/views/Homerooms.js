@@ -11,6 +11,8 @@ import HomeroomList from '../components/HomeroomList';
 const Homerooms = props => {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
+  localStorage.setItem('last-page', '/homerooms');
+
   useEffect(() => {
     setTimeout(() => {
       setIsPageLoaded(true);

@@ -5,6 +5,8 @@ import Dropdown from "./Dropdown";
 import TopTenItem from './TopTenItem';
 import Modal from './Modal';
 
+import firebase from '../firebase';
+
 export default function TopTen() {
   const topTenModeOptions = [
     {
@@ -178,7 +180,7 @@ export default function TopTen() {
   const [showProfile, setShowProfile] = useState(false);
   const [profileData, setProfileData] = useState({});
 
-  useEffect(() => {
+  useEffect(async () => {
     setTopTenStudents(_tempStudents);
   }, []);
 
@@ -191,14 +193,10 @@ export default function TopTen() {
 
   const topTenModeChange = e => {
     const { value } = e.target;
-
-    console.log(value);
   }
 
   const topTenYearGroupsChange = e => {
     const { value } = e.target;
-
-    console.log(value);
   }
 
   return (

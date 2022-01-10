@@ -27,13 +27,13 @@ const App = (props) => {
     <React.Fragment>
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Dashboard} />
           <Route path="/login" component={Login} />
           
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/homerooms" component={Homerooms} />
-          <PrivateRoute exact path="/homeroom/:homeroom_id" component={Homeroom} />
-          <PrivateRoute exact path="/yearleader" component={YearLeader} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/homerooms" component={Homerooms} />
+          <PrivateRoute path="/homeroom/:homeroom_id" component={Homeroom} />
+          <PrivateRoute path="/yearleader" component={YearLeader} />
         </Switch>
       </Router>
     </React.Fragment>

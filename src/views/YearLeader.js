@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SideNav from '../components/SideNav';
 import MeritList from '../components/MeritsList';
-import YearTotals from '../components/YearTotals';
+import LowestPoints from '../components/LowestPoints';
 
 const YearLeader = props => {
   const sideNavItems = [
@@ -20,17 +20,19 @@ const YearLeader = props => {
     {
       title: 'Statistics',
       active: false,
-      component: <YearTotals />
+      component: <LowestPoints />
     }
   ];
 
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState(<MeritList />);
 
+  localStorage.setItem('last-page', '/yearleader');
+
   useEffect(() => {
     setTimeout(() => {
       setIsPageLoaded(true);
-    }, 1500);
+    }, 1000);
   }, []);
 
   if (!props.authUser) return <Redirect to="/login" />

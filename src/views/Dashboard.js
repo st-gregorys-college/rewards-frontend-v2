@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import firebase from '../firebase';
+
 import PageLoader from '../components/PageLoader';
 import Navbar from '../components/Navbar';
 import Header from '../components/Header';
@@ -14,12 +16,14 @@ import HouseTotals from '../components/HouseTotals';
 import Footer from '../components/Footer';
 
 const Dashboard = props => {
-  const [isPageLoaded, setIsPageLoaded] = useState(false);
+  const [isPageLoaded, setIsPageLoaded] = useState(false)
 
-  useEffect(() => {
+  localStorage.setItem('last-page', '/dashboard');
+
+  useEffect(async () => {
     setTimeout(() => {
       setIsPageLoaded(true);
-    }, 1500);
+    }, 1000);
   }, []);
 
   if (!props.authUser) return <Redirect to="/login" />
